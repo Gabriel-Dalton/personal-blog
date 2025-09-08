@@ -7,7 +7,7 @@
             excerpt:
                 "Exploring how emerging technologies are reshaping our world and what it means for the next generation of creators.",
             tags: ["technology", "future", "innovation"],
-            contentPath: "future-of-digital-innovation.html"
+            contentPath: "/posts/future-of-digital-innovation.html"
         },
         {
             slug: "building-sustainable-growth",
@@ -16,7 +16,7 @@
             excerpt:
                 "Lessons learned from scaling projects while maintaining quality and purpose in an increasingly complex digital landscape.",
             tags: ["growth", "sustainability", "process"],
-            contentPath: "building-sustainable-growth.html"
+            contentPath: "/posts/building-sustainable-growth.html"
         },
         {
             slug: "creative-problem-solving",
@@ -25,7 +25,7 @@
             excerpt:
                 "Techniques and frameworks for approaching complex challenges with creativity and systematic thinking.",
             tags: ["creativity", "systems", "thinking"],
-            contentPath: "creative-problem-solving.html"
+            contentPath: "/posts/creative-problem-solving.html"
         },
         {
             slug: "the-power-of-simplicity",
@@ -34,7 +34,7 @@
             excerpt:
                 "Why less is often more in design, communication, and life. Finding clarity in an increasingly complex world.",
             tags: ["simplicity", "design", "clarity"],
-            contentPath: "the-power-of-simplicity.html"
+            contentPath: "/posts/the-power-of-simplicity.html"
         },
         {
             slug: "focus-in-a-distracted-world",
@@ -43,7 +43,7 @@
             excerpt:
                 "Strategies for maintaining deep focus and productivity in an age of constant notifications and digital overwhelm.",
             tags: ["focus", "productivity", "habits"],
-            contentPath: "focus-in-a-distracted-world.html"
+            contentPath: "/posts/focus-in-a-distracted-world.html"
         }
     ];
 
