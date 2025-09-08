@@ -1,6 +1,3 @@
-// Minimal client-side data source for the blog
-// Exposes window.POSTS and window.ALL_TAGS
-
 (function () {
     const posts = [
         {
@@ -59,5 +56,3 @@
     window.POSTS = posts;
     window.ALL_TAGS = collectTags(posts);
 })();
-
-
