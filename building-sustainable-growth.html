@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Building Sustainable Growth • Gabriel Dalton</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background-color: #181818; color: #ffffff; line-height: 1.75; }
+        .container { max-width: 800px; margin: 0 auto; padding: 0 20px; }
+
+        header { padding: 2rem 0; border-bottom: 1px solid #232323; }
+        .header-content { display: flex; justify-content: space-between; align-items: center; }
+        .logo { font-size: 1.2rem; font-weight: 600; color: #FFDB6E; }
+        .back { color: #e0e0e0; text-decoration: none; }
+        .back:hover { color: #FFDB6E; }
+
+        main { padding: 3rem 0; }
+        h1 { font-size: 2.2rem; font-weight: 700; color: #FFDB6E; margin-bottom: .5rem; }
+        .meta { color: #888888; margin-bottom: 1.5rem; }
+        article p { margin: 1rem 0; color: #e0e0e0; }
+        article img { width: 100%; border-radius: 12px; margin: 1rem 0; }
+        .tags { margin-top: 1rem; display: flex; gap: .5rem; flex-wrap: wrap; }
+        .chip { background: #232323; color: #e0e0e0; border: 1px solid #2a2a2a; padding: .3rem .7rem; border-radius: 999px; font-size: .85rem; text-decoration: none; }
+        .chip:hover { color: #FFDB6E; border-color: #3a3a3a; }
+
+        footer { background-color: #2e2e2d; padding: 2rem 0; margin-top: 4rem; border-top: 1px solid #232323; }
+        .footer-content { text-align: center; color: #888888; font-size: 0.9rem; }
+
+        @media (max-width: 768px) { .container { padding: 0 15px; } h1 { font-size: 1.8rem; } }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="header-content">
+                <div class="logo">Gabriel Dalton</div>
+                <a class="back" href="home.html">All posts</a>
+            </div>
+        </header>
+
+        <main>
+            <h1>Building Sustainable Growth</h1>
+            <div class="meta">December 10, 2024</div>
+            <article>
+                <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?w=1200&q=80" alt="Forest growth" />
+                <p>Sustainable growth is less about hacks and more about systems. Clear tradeoffs, measured feedback loops, and a consistent cadence compound.</p>
+                <p>Good strategy removes waste and amplifies purpose. The best growth feels calm, not chaotic.</p>
+            </article>
+            <div class="tags">
+                <a class="chip" href="home.html?tag=growth">Growth</a>
+                <a class="chip" href="home.html?tag=sustainability">Sustainability</a>
+                <a class="chip" href="home.html?tag=process">Process</a>
+            </div>
+        </main>
+    </div>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <p>&copy; <span id="year">2025</span> Gabriel Dalton</p>
+            </div>
+        </div>
+    </footer>
+    
+    <script>
+        // Auto-update year
+        document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+</body>
+</html>

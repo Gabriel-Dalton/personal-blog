@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Power of Simplicity • Gabriel Dalton</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background-color: #181818; color: #ffffff; line-height: 1.75; }
+        .container { max-width: 800px; margin: 0 auto; padding: 0 20px; }
+
+        header { padding: 2rem 0; border-bottom: 1px solid #232323; }
+        .header-content { display: flex; justify-content: space-between; align-items: center; }
+        .logo { font-size: 1.2rem; font-weight: 600; color: #FFDB6E; }
+        .back { color: #e0e0e0; text-decoration: none; }
+        .back:hover { color: #FFDB6E; }
+
+        main { padding: 3rem 0; }
+        h1 { font-size: 2.2rem; font-weight: 700; color: #FFDB6E; margin-bottom: .5rem; }
+        .meta { color: #888888; margin-bottom: 1.5rem; }
+        article p { margin: 1rem 0; color: #e0e0e0; }
+        blockquote { border-left: 3px solid #3a3a3a; padding-left: 12px; color: #cfcfcf; margin: 1rem 0; }
+        .tags { margin-top: 1rem; display: flex; gap: .5rem; flex-wrap: wrap; }
+        .chip { background: #232323; color: #e0e0e0; border: 1px solid #2a2a2a; padding: .3rem .7rem; border-radius: 999px; font-size: .85rem; text-decoration: none; }
+        .chip:hover { color: #FFDB6E; border-color: #3a3a3a; }
+
+        footer { background-color: #2e2e2d; padding: 2rem 0; margin-top: 4rem; border-top: 1px solid #232323; }
+        .footer-content { text-align: center; color: #888888; font-size: 0.9rem; }
+
+        @media (max-width: 768px) { .container { padding: 0 15px; } h1 { font-size: 1.8rem; } }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="header-content">
+                <div class="logo">Gabriel Dalton</div>
+                <a class="back" href="home.html">All posts</a>
+            </div>
+        </header>
+
+        <main>
+            <h1>The Power of Simplicity</h1>
+            <div class="meta">November 28, 2024</div>
+            <article>
+                <p>Simplicity is a service to the reader. It takes work to remove work for others. Simple systems are easier to scale, debug, and sustain.</p>
+                <blockquote>Less, but better.</blockquote>
+            </article>
+            <div class="tags">
+                <a class="chip" href="home.html?tag=simplicity">Simplicity</a>
+                <a class="chip" href="home.html?tag=design">Design</a>
+                <a class="chip" href="home.html?tag=clarity">Clarity</a>
+            </div>
+        </main>
+    </div>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <p>&copy; <span id="year">2025</span> Gabriel Dalton</p>
+            </div>
+        </div>
+    </footer>
+    
+    <script>
+        // Auto-update year
+        document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+</body>
+</html>
