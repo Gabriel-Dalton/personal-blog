@@ -75,6 +75,28 @@
             max-width: 600px;
         }
 
+        /* Filter */
+        .filters {
+            display: flex;
+            flex-wrap: wrap;
+            gap: .5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .chip {
+            background: #232323;
+            color: #e0e0e0;
+            border: 1px solid #2a2a2a;
+            padding: .4rem .8rem;
+            border-radius: 999px;
+            font-size: .9rem;
+            cursor: pointer;
+            transition: background .15s ease, color .15s ease, border .15s ease;
+        }
+
+        .chip:hover { color: #FFDB6E; border-color: #3a3a3a; }
+        .chip.active { background: #2e2e2d; color: #FFDB6E; border-color: #3a3a3a; }
+
         /* Posts */
         .posts {
             margin-bottom: 4rem;
@@ -184,36 +206,9 @@
                 <p>I write about technology, creativity, and the intersection of human experience with digital innovation.</p>
             </section>
 
-            <section class="posts">
-                <article class="post">
-                    <div class="post-date">December 15, 2024</div>
-                    <h2 class="post-title"><a href="#">The Future of Digital Innovation</a></h2>
-                    <p class="post-excerpt">Exploring how emerging technologies are reshaping our world and what it means for the next generation of creators.</p>
-                </article>
-
-                <article class="post">
-                    <div class="post-date">December 10, 2024</div>
-                    <h2 class="post-title"><a href="#">Building Sustainable Growth</a></h2>
-                    <p class="post-excerpt">Lessons learned from scaling projects while maintaining quality and purpose in an increasingly complex digital landscape.</p>
-                </article>
-
-                <article class="post">
-                    <div class="post-date">December 5, 2024</div>
-                    <h2 class="post-title"><a href="#">Creative Problem Solving</a></h2>
-                    <p class="post-excerpt">Techniques and frameworks for approaching complex challenges with creativity and systematic thinking.</p>
-                </article>
-
-                <article class="post">
-                    <div class="post-date">November 28, 2024</div>
-                    <h2 class="post-title"><a href="#">The Power of Simplicity</a></h2>
-                    <p class="post-excerpt">Why less is often more in design, communication, and life. Finding clarity in an increasingly complex world.</p>
-                </article>
-
-                <article class="post">
-                    <div class="post-date">November 20, 2024</div>
-                    <h2 class="post-title"><a href="#">Focus in a Distracted World</a></h2>
-                    <p class="post-excerpt">Strategies for maintaining deep focus and productivity in an age of constant notifications and digital overwhelm.</p>
-                </article>
+            <section>
+                <div class="filters" id="filters"></div>
+                <div class="posts" id="posts"></div>
             </section>
         </main>
     </div>
@@ -231,16 +226,54 @@
         </div>
     </footer>
 
+    <script src="./posts.js"></script>
     <script>
-        // Simple click handlers for post titles
-        document.querySelectorAll('.post-title a').forEach(link => {
-            link.addEventListener('click', (e) => {
-                e.preventDefault();
-                const title = e.target.textContent;
-                console.log(`Opening post: ${title}`);
-                // In a real blog, this would navigate to the full post
+        // Render filters and posts from posts.js
+        const postsEl = document.getElementById('posts');
+        const filtersEl = document.getElementById('filters');
+
+        const urlParams = new URLSearchParams(location.search);
+        let activeTag = urlParams.get('tag') || 'all';
+
+        function formatDate(iso) {
+            return new Date(iso + 'T00:00:00').toLocaleDateString(undefined, { year: 'numeric', month: 'long', day: 'numeric' });
+        }
+
+        function renderFilters() {
+            const all = ['all', ...ALL_TAGS];
+            filtersEl.innerHTML = '';
+            all.forEach(tag => {
+                const chip = document.createElement('button');
+                chip.type = 'button';
+                chip.className = 'chip' + (tag === activeTag ? ' active' : '');
+                chip.textContent = tag.charAt(0).toUpperCase() + tag.slice(1);
+                chip.addEventListener('click', () => {
+                    activeTag = tag;
+                    const next = new URL(location.href);
+                    if (tag === 'all') next.searchParams.delete('tag'); else next.searchParams.set('tag', tag);
+                    history.replaceState({}, '', next);
+                    renderFilters();
+                    renderPosts();
+                });
+                filtersEl.appendChild(chip);
             });
-        });
+        }
+
+        function renderPosts() {
+            const visible = activeTag === 'all' ? POSTS : POSTS.filter(p => p.tags.includes(activeTag));
+            // Newest first
+            const sorted = [...visible].sort((a, b) => b.date.localeCompare(a.date));
+            postsEl.innerHTML = sorted.map(p => `
+                <article class="post">
+                    <div class="post-date">${formatDate(p.date)}</div>
+                    <h2 class="post-title"><a href="post.html?slug=${encodeURIComponent(p.slug)}">${p.title}</a></h2>
+                    <p class="post-excerpt">${p.excerpt}</p>
+                </article>
+            `).join('');
+        }
+
+        renderFilters();
+        renderPosts();
     </script>
 <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'97c0b929e7e625df',t:'MTc1NzM1ODM4OC4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
 </html>
