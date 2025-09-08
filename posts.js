@@ -10,15 +10,7 @@
             excerpt:
                 "Exploring how emerging technologies are reshaping our world and what it means for the next generation of creators.",
             tags: ["technology", "future", "innovation"],
-            content: `
-                <p>Innovation cycles are compressing. What once took a decade now happens in a few short years. The winners will be the ones who learn faster, ship smaller, and iterate with care.</p>
-                <p>Three principles guide my thinking:</p>
-                <ul>
-                    <li>Build for clarity: make the value obvious.</li>
-                    <li>Architect for change: expect requirements to evolve.</li>
-                    <li>Respect energy: create systems that do more with less.</li>
-                </ul>
-            `
+            contentPath: "posts/future-of-digital-innovation.html"
         },
         {
             slug: "building-sustainable-growth",
@@ -27,10 +19,7 @@
             excerpt:
                 "Lessons learned from scaling projects while maintaining quality and purpose in an increasingly complex digital landscape.",
             tags: ["growth", "sustainability", "process"],
-            content: `
-                <p>Sustainable growth is less about hacks and more about systems. Clear tradeoffs, measured feedback loops, and a consistent cadence compound.</p>
-                <p>Good strategy removes waste and amplifies purpose. The best growth feels calm, not chaotic.</p>
-            `
+            contentPath: "posts/building-sustainable-growth.html"
         },
         {
             slug: "creative-problem-solving",
@@ -39,9 +28,7 @@
             excerpt:
                 "Techniques and frameworks for approaching complex challenges with creativity and systematic thinking.",
             tags: ["creativity", "systems", "thinking"],
-            content: `
-                <p>Constraints create creativity. Define the box, then deliberately step outside it. I like alternating modes: diverge to explore, converge to decide.</p>
-            `
+            contentPath: "posts/creative-problem-solving.html"
         },
         {
             slug: "the-power-of-simplicity",
@@ -50,9 +37,7 @@
             excerpt:
                 "Why less is often more in design, communication, and life. Finding clarity in an increasingly complex world.",
             tags: ["simplicity", "design", "clarity"],
-            content: `
-                <p>Simplicity is a service to the reader. It takes work to remove work for others. Simple systems are easier to scale, debug, and sustain.</p>
-            `
+            contentPath: "posts/the-power-of-simplicity.html"
         },
         {
             slug: "focus-in-a-distracted-world",
@@ -61,9 +46,7 @@
             excerpt:
                 "Strategies for maintaining deep focus and productivity in an age of constant notifications and digital overwhelm.",
             tags: ["focus", "productivity", "habits"],
-            content: `
-                <p>Attention is our most scarce resource. Guard it. Design your environment to make the right thing the easy thing.</p>
-            `
+            contentPath: "posts/focus-in-a-distracted-world.html"
         }
     ];
 

@@ -51,7 +51,12 @@
             document.title = post.title + ' • Gabriel Dalton';
             titleEl.textContent = post.title;
             metaEl.textContent = new Date(post.date + 'T00:00:00').toLocaleDateString(undefined, { year: 'numeric', month: 'long', day: 'numeric' });
-            contentEl.innerHTML = post.content;
+            if (post.contentPath) {
+                fetch(post.contentPath)
+                    .then(r => r.text())
+                    .then(html => { contentEl.innerHTML = html; })
+                    .catch(() => { contentEl.innerHTML = '<p>Unable to load post content.</p>'; });
+            }
 
             tagsEl.innerHTML = post.tags.map(t => `<a class="chip" href="home.html?tag=${encodeURIComponent(t)}">${t}</a>`).join('');
         });
