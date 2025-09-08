@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gabriel Dalton</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background-color: #181818;
+            color: #ffffff;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        header {
+            padding: 2rem 0;
+            border-bottom: 1px solid #232323;
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: #FFDB6E;
+        }
+
+        nav a {
+            color: #e0e0e0;
+            text-decoration: none;
+            margin-left: 2rem;
+            font-size: 0.95rem;
+        }
+
+        nav a:hover {
+            color: #FFDB6E;
+        }
+
+        /* Main Content */
+        main {
+            padding: 3rem 0;
+        }
+
+        .intro {
+            margin-bottom: 4rem;
+        }
+
+        .intro h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #FFDB6E;
+            margin-bottom: 1rem;
+        }
+
+        .intro p {
+            font-size: 1.1rem;
+            color: #e0e0e0;
+            max-width: 600px;
+        }
+
+        /* Posts */
+        .posts {
+            margin-bottom: 4rem;
+        }
+
+        .post {
+            margin-bottom: 3rem;
+            padding-bottom: 2rem;
+            border-bottom: 1px solid #232323;
+        }
+
+        .post:last-child {
+            border-bottom: none;
+        }
+
+        .post-date {
+            font-size: 0.9rem;
+            color: #888888;
+            margin-bottom: 0.5rem;
+        }
+
+        .post-title {
+            font-size: 1.4rem;
+            font-weight: 600;
+            color: #ffffff;
+            margin-bottom: 0.8rem;
+        }
+
+        .post-title a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        .post-title a:hover {
+            color: #FFDB6E;
+        }
+
+        .post-excerpt {
+            color: #e0e0e0;
+            font-size: 1rem;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #2e2e2d;
+            padding: 2rem 0;
+            margin-top: 4rem;
+            border-top: 1px solid #232323;
+        }
+
+        .footer-content {
+            text-align: center;
+            color: #888888;
+            font-size: 0.9rem;
+        }
+
+        .footer-links {
+            margin-bottom: 1rem;
+        }
+
+        .footer-links a {
+            color: #e0e0e0;
+            text-decoration: none;
+            margin: 0 1rem;
+        }
+
+        .footer-links a:hover {
+            color: #FFDB6E;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            nav a {
+                margin: 0 1rem;
+            }
+
+            .intro h1 {
+                font-size: 2rem;
+            }
+
+            .container {
+                padding: 0 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="header-content">
+                <div class="logo">Gabriel Dalton</div>
+                <nav>
+                    <a href="#about">About</a>
+                    <a href="#contact">Contact</a>
+                </nav>
+            </div>
+        </header>
+
+        <main>
+            <section class="intro">
+                <h1>Writer & Thinker</h1>
+                <p>I write about technology, creativity, and the intersection of human experience with digital innovation.</p>
+            </section>
+
+            <section class="posts">
+                <article class="post">
+                    <div class="post-date">December 15, 2024</div>
+                    <h2 class="post-title"><a href="#">The Future of Digital Innovation</a></h2>
+                    <p class="post-excerpt">Exploring how emerging technologies are reshaping our world and what it means for the next generation of creators.</p>
+                </article>
+
+                <article class="post">
+                    <div class="post-date">December 10, 2024</div>
+                    <h2 class="post-title"><a href="#">Building Sustainable Growth</a></h2>
+                    <p class="post-excerpt">Lessons learned from scaling projects while maintaining quality and purpose in an increasingly complex digital landscape.</p>
+                </article>
+
+                <article class="post">
+                    <div class="post-date">December 5, 2024</div>
+                    <h2 class="post-title"><a href="#">Creative Problem Solving</a></h2>
+                    <p class="post-excerpt">Techniques and frameworks for approaching complex challenges with creativity and systematic thinking.</p>
+                </article>
+
+                <article class="post">
+                    <div class="post-date">November 28, 2024</div>
+                    <h2 class="post-title"><a href="#">The Power of Simplicity</a></h2>
+                    <p class="post-excerpt">Why less is often more in design, communication, and life. Finding clarity in an increasingly complex world.</p>
+                </article>
+
+                <article class="post">
+                    <div class="post-date">November 20, 2024</div>
+                    <h2 class="post-title"><a href="#">Focus in a Distracted World</a></h2>
+                    <p class="post-excerpt">Strategies for maintaining deep focus and productivity in an age of constant notifications and digital overwhelm.</p>
+                </article>
+            </section>
+        </main>
+    </div>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-links">
+                    <a href="mailto:gabriel@example.com">Email</a>
+                    <a href="#">Twitter</a>
+                    <a href="#">LinkedIn</a>
+                </div>
+                <p>&copy; 2024 Gabriel Dalton</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Simple click handlers for post titles
+        document.querySelectorAll('.post-title a').forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                const title = e.target.textContent;
+                console.log(`Opening post: ${title}`);
+                // In a real blog, this would navigate to the full post
+            });
+        });
+    </script>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'97c0b929e7e625df',t:'MTc1NzM1ODM4OC4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>
