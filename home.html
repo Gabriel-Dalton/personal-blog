@@ -24,7 +24,6 @@
             padding: 0 20px;
         }
 
-        /* Header */
         header {
             padding: 2rem 0;
             border-bottom: 1px solid #232323;
@@ -53,7 +52,6 @@
             color: #FFDB6E;
         }
 
-        /* Main Content */
         main {
             padding: 3rem 0;
         }
@@ -75,7 +73,6 @@
             max-width: 600px;
         }
 
-        /* Filter */
         .filters {
             display: flex;
             flex-wrap: wrap;
@@ -97,7 +94,6 @@
         .chip:hover { color: #FFDB6E; border-color: #3a3a3a; }
         .chip.active { background: #2e2e2d; color: #FFDB6E; border-color: #3a3a3a; }
 
-        /* Posts */
         .posts {
             margin-bottom: 4rem;
         }
@@ -139,7 +135,6 @@
             font-size: 1rem;
         }
 
-        /* Footer */
         footer {
             background: #181818;
             padding: 2rem 0 1.5rem;
@@ -257,7 +252,6 @@
         }
 
 
-        /* Responsive */
         @media (max-width: 768px) {
             .header-content {
                 flex-direction: column;
@@ -276,7 +270,6 @@
                 padding: 0 15px;
             }
 
-            /* Footer responsive */
             .footer-main {
                 flex-direction: column;
                 gap: 1rem;
@@ -335,12 +328,12 @@
             <div class="footer-content">
                 <div class="footer-main">
                     <div class="footer-brand">
-                        <a href="https://gabrieldalton.com" target="_blank" rel="noopener noreferrer" class="logo">Gabriel Dalton</a>
+                        <a href="https://gabrieldalton.com" target="_blank" rel="noopener noreferrer" class="logo">gabrieldalton.com</a>
                     </div>
                     
                     <div class="footer-social">
                         <div class="social-links">
-                            <a href="#" title="LinkedIn" aria-label="Connect on LinkedIn">in</a>
+                            <a href="https://www.linkedin.com/in/gabrieldalton/" target="_blank" rel="noopener noreferrer" title="LinkedIn" aria-label="Connect on LinkedIn">in</a>
                         </div>
                     </div>
                 </div>
@@ -356,7 +349,6 @@
 
     <script src="./assets/js/posts.js"></script>
     <script>
-        // Render filters and posts from posts.js
         const postsEl = document.getElementById('posts');
         const filtersEl = document.getElementById('filters');
 
@@ -389,7 +381,6 @@
 
         function renderPosts() {
             const visible = activeTag === 'all' ? POSTS : POSTS.filter(p => p.tags.includes(activeTag));
-            // Newest first
             const sorted = [...visible].sort((a, b) => b.date.localeCompare(a.date));
             postsEl.innerHTML = sorted.map(p => `
                 <article class="post">
@@ -403,7 +394,6 @@
         renderFilters();
         renderPosts();
         
-        // Auto-update year
         document.getElementById('year').textContent = new Date().getFullYear();
     </script>
 <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'97c0b929e7e625df',t:'MTc1NzM1ODM4OC4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
